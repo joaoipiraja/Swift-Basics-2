@@ -26,19 +26,19 @@ let arrayToString = array.map{"\($0)"}
 //MARK: - Optionals and func nameOfFunction(external internal)
 
 
-func searchString(in s:String, ifContains c:String) -> Bool?{
-    return s.contains(c)
+func Search(ifContains c:Character, in s:String) -> String.Index?{
+    return s.lastIndex(of: c)
 }
 
-print(searchString(in: "Olá", ifContains: "á")!) //Unsafe unwrapping the optional
+print("! ",Search(ifContains: "á", in: "Olá")!.encodedOffset) //Unsafe unwrapping the optional
 
-if let s = searchString(in: "Olá", ifContains: "á"){ //safe unwrapping the optional
-    print(s)
+print("? ", Search(ifContains: "á", in: "Olá")?.encodedOffset ?? -1)
+
+if let s = Search(ifContains: "á", in: "Olá"){ //safe unwrapping the optional
+    print("let ",s.encodedOffset)
 }
 
-if searchString(in: "Olá", ifContains: "á") ?? false{
-    print("Cotains")
-}
+
 
 
 
