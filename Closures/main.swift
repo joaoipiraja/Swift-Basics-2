@@ -20,8 +20,18 @@ print(result)
 
 let array = [6,2,3,9,4,1]
 
+let arrayEvenNumbers = array.filter{$0 % 2 == 0}
 let arrayPlusOne = array.map{$0+1}
-let arrayToString = array.map{"\($0)"}
+let arraySum = array.reduce(0){$0 + $1}
+
+let arrays = [array,array]
+
+let DoubledArray = arrays.flatMap{$0.map{$0}}
+
+print("arrayEvenNumbers: ",arrayEvenNumbers)
+print("arrayPlusOne: ",arrayPlusOne)
+print("arraySum: ",arraySum)
+print("DoubledArray",DoubledArray)
 
 //MARK: - Optionals and func nameOfFunction(external internal)
 
@@ -32,8 +42,8 @@ func Search(ifContains c:Character, in s:String) -> String.Index?{
 
 print("! ",Search(ifContains: "á", in: "Olá")!.encodedOffset) //Unsafe unwrapping the optional
 
-print("? ", Search(ifContains: "á", in: "Olá")?.encodedOffset ?? -1)
-
+print("? ", Search(ifContains: "á", in: "Olá")?.encodedOffset)
+print("?? ", Search(ifContains: "á", in: "Olá")?.encodedOffset ?? -1)
 if let s = Search(ifContains: "á", in: "Olá"){ //safe unwrapping the optional
     print("let ",s.encodedOffset)
 }
