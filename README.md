@@ -66,7 +66,7 @@ let DoubledArray = arrays.flatMap{$0.map{$0}}
 It can be return Nil
 
 ### SearchString Function
-We can see that the returned value can be Nil if there's no "C" in "S". So, it's putted the "?" to mean the sentence "is Nil?"
+We can see that the returned value can be Nil if there's no C in S. So, it's putted the "?" to mean the sentence "is Nil?"
 ```Swift
 func Search(ifContains c:Character, in s:String) -> String.Index?{
     return s.lastIndex(of: c)
@@ -166,7 +166,7 @@ func findDarwin(from animals: [Animal]){
 ##### Safe
 
 ```Swift
-func findNemo(from animals: [Animal]){
+func findDarwin(from animals: [Animal]){
     for animal in animals{
  ```  
  ```Swift  
@@ -183,7 +183,7 @@ func findNemo(from animals: [Animal]){
 #### Upcast
 ```Swift  
 
-func findNemo(from animals: [Animal]){
+func findDarwin(from animals: [Animal]){
     
     for animal in animals{
         if(animal is Fish){ //check the type
